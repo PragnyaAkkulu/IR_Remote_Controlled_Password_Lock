@@ -1,4 +1,4 @@
-# IR_Remote_Controlled_Password_Lock
+# IR Remote Controlled Password Lock
 Circuit is as shown.
 
 Connect the motor to your door latch.
