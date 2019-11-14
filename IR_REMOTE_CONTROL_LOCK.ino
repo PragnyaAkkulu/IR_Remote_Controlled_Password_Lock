@@ -9,12 +9,12 @@ int opening=11;//on
 int closing=12;//close lock--
 int holdon=13;
 int led=6;
-int pw=2017;
+int pw=2019; //password :)
 int type;
 int motor1=10;
 int motor2=9;
-int flag=0;
-int v=0;
+int flag=0;//action happening on lock ->opening/closing/no action
+int v=0;//status of lock: closed->0, open->1
  void typing(int t);
  void check(int *type);
 
@@ -63,11 +63,11 @@ void loop() {
                        
       irreceive.resume();
     }
-       if(flag==0)
+       if(flag==0)//no action
     {digitalWrite(motor1,LOW);
 digitalWrite(motor2,LOW);}
 
-    if(flag==1)
+    if(flag==1)//opening
     {
       digitalWrite(led,HIGH);
       delay(250);
@@ -80,7 +80,7 @@ flag=0;
 Serial.print("opened");
 Serial.print(v);}
 
-if(flag==2)
+if(flag==2)//closing
 {digitalWrite(motor1,LOW);
 digitalWrite(motor2,HIGH);
 delay(2200);
@@ -104,7 +104,7 @@ check(&f);
   void check(int *type)
   {
     Serial.print(*type);
-    if (*type==2019)//password :)
+    if (*type==pw)
     {flag=1;
     v=1;}
     else
