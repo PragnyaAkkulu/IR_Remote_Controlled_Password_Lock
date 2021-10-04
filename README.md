@@ -1,5 +1,7 @@
 # IR Remote Controlled Password Lock
 ![Screenshot](irlockcircuit.JPG)
+
+
 Connect the motor to your door latch. You can also use a servo instead of a motor+motor driver.
 To get the button values for your IR remote , use the IRremote_test code and change the b array in the main code with corresponding values.
 The password can only be numerical but of any length. 
